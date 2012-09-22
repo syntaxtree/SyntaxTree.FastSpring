@@ -32,7 +32,7 @@ using SyntaxTree.FastSpring;
 public class NotificationController : Controller
 {
 	[HttpPost]
-	public ActionResult Order(
+	public ActionResult NotifyOrder(
 		string customerCompany,
 		string customerEmail,
 		string customerFirstName,
@@ -42,8 +42,9 @@ public class NotificationController : Controller
 	{
 		const string privateKey = "75f0fff79f988c10b2c4f6315aec5a86";
 
-		if (!Request.IsValidRequest(privateKey))
+		if (!Request.IsValidRequest(privateKey)) {
 			// ...
+		}
 
 		// ...
 	}
