@@ -7,8 +7,6 @@ It supports both ASP.NET MVC and the ASP.NET WebForms.
 
 ## API
 
-***
-
 For ASP.NET MVC.
 
 ```csharp
@@ -42,7 +40,8 @@ public class NotificationController : Controller
 	{
 		const string privateKey = "75f0fff79f988c10b2c4f6315aec5a86";
 
-		if (!Request.IsValidRequest(privateKey)) {
+		if (!Request.IsValidNotification(privateKey))
+		{
 			// ...
 		}
 
