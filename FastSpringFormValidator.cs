@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Specialized;
 using System.Linq;
 using System.Security.Cryptography;
@@ -29,7 +30,7 @@ namespace SyntaxTree.FastSpring
 
 			var value = form.AllKeys
 				.Where(k => k != hashParameter)
-				.OrderBy(k => k)
+				.OrderBy(k => k, StringComparer.Ordinal)
 				.Select(k => form[k])
 				.Aggregate(new StringBuilder(), (sb, v) => sb.Append(v))
 				.Append(privateKey)
